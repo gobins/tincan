@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: localstack
+  name: s3
+spec:
+  type: ClusterIP
+  selector:
+    app: localstack
+  ports:
+    - name: localstack
+      protocol: TCP
+      targetPort: 4572
+      port: 4572
